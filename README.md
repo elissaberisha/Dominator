@@ -69,22 +69,26 @@ Dominator aims to:
    git clone https://github.com/elissaberisha/dominator.git
    cd dominator
    ```
-2. Install required Python packages: 
+
+2. Install required Python packages:
    ```bash
    pip install -r requirements.txt
    ```
-3. Create a .env file and add your API keys:
-    ```
-VIRUSTOTAL_API_KEY=...
-SHODAN_API_KEY=...
-SECURITYTRAILS_API_KEY=...
-WHOISXML_API_KEY=...
-WEBHOOK_URL=...
-    ```
-4. Run the tool(ex.):
+
+3. Create a `.env` file and add your API keys:
+   ```env
+   VIRUSTOTAL_API_KEY=...
+   SHODAN_API_KEY=...
+   SECURITYTRAILS_API_KEY=...
+   WHOISXML_API_KEY=...
+   WEBHOOK_URL=...
+   ```
+
+4. Run the tool (example):
    ```bash
    python main.py --list list.txt -o results -i 24h
    ```
+
 ### External Tools
 
 - `subfinder`: Required for subdomain enumeration  
