@@ -19,6 +19,7 @@ Dominator aims to:
 
 ## Project Structure
 
+```plaintext
 /dominator
 │
 ├── main.py               # Entry point of the program, handles CLI commands and main logic
@@ -31,7 +32,7 @@ Dominator aims to:
 ├── .gitignore            # Prevents sensitive files like .env from being tracked by Git
 ├── requirements.txt      # Python dependencies for the project
 └── output/               # Directory where JSON and CSV scan results are saved
-
+```
 
 ## Features
 
