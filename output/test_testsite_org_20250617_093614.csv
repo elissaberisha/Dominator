@@ -1,0 +1,2 @@
+domain,cname,resolvable,provider,potential_takeover,virustotal,shodan,securitytrails,whoisxml
+www.testsite.org,216.150.1.129,True,-,False,Clean,"Ports: [80, 443]",SecurityTrails Error: 429,"Created: N/A, Expires: N/A, Registrar: Squarespace Domains II LLC"
