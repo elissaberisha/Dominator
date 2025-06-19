@@ -4,18 +4,25 @@ import re
 import json
 import argparse
 import requests
-from config import RED, GREEN, CYAN, RESET
+from config import RED, GREEN, CYAN, LIGHT_PURPLE, DARK_PURPLE, RESET
+
+from datetime import datetime
+
+VERSION = "v1.0"  
 
 def print_banner():
-    print(fr"""{CYAN}
-  _____   ____  __  __ _____ _   _       _______ ____  _____  
- |  __ \ / __ \|  \/  |_   _| \ | |   /\|__   __/ __ \|  __ \ 
- | |  | | |  | | \  / | | | |  \| |  /  \  | | | |  | | |__) |
- | |  | | |  | | |\/| | | | | . ` | / /\ \ | | | |  | |  _  / 
- | |__| | |__| | |  | |_| |_| |\  |/ ____ \| | | |__| | | \ \ 
- |_____/ \____/|_|  |_|_____|_| \_/_/    \_\_|  \____/|_|  \_|
-{RESET}
-{GREEN}Welcome to DOMINATOR - Subdomain Takeover Monitoring Tool{RESET}
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(fr"""{LIGHT_PURPLE} 
+
+██████╗░░█████╗░███╗░░░███╗██╗███╗░░██╗░█████╗░████████╗░█████╗░██████╗░
+██╔══██╗██╔══██╗████╗░████║██║████╗░██║██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗
+██║░░██║██║░░██║██╔████╔██║██║██╔██╗██║███████║░░░██║░░░██║░░██║██████╔╝
+██║░░██║██║░░██║██║╚██╔╝██║██║██║╚████║██╔══██║░░░██║░░░██║░░██║██╔══██╗
+██████╔╝╚█████╔╝██║░╚═╝░██║██║██║░╚███║██║░░██║░░░██║░░░╚█████╔╝██║░░██║
+╚═════╝░░╚════╝░╚═╝░░░░░╚═╝╚═╝╚═╝░░╚══╝╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝
+{LIGHT_PURPLE}
+Welcome to DOMINATOR - Subdomain Takeover Monitoring Tool
+{LIGHT_PURPLE}{VERSION}    Started: {now}{RESET}
 """)
 
 def parse_interval(interval_str):
