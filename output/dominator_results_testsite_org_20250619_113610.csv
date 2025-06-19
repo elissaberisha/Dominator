@@ -1,0 +1,2 @@
+domain,cname,ip,resolvable,provider,potential_takeover,virustotal,shodan,securitytrails,whoisxml
+www.testsite.org,-,216.150.1.193,True,-,False,Clean,"Ports: [80, 443]",SecurityTrails Error: 429,WHOISXML Error: 401

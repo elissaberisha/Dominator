@@ -1,0 +1,27 @@
+domain,cname,ip,resolvable,provider,potential_takeover,virustotal,shodan,securitytrails,whoisxml
+hotfix.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+ww25.reporting.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+ww25.viruses.cms.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+ww25.vaccine.cms.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+ww25.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+cms.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+hostmaster.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+ww25.hostmaster.viruses.cms.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+ww25.ldrhafwjba2rt4io.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+ww25.uat-ci.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+ww25.virus.cms.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+ww25.damn.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+ldrhafwjba2rt4io.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+uat-ci.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+ww25.hostmaster.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+ww38.your.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+ww25.hostmaster.www.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+ww38.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+www.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+typo3-7-5-0.cms.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+beta.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+whoogle.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+ww25.hostmaster.vaccine.cms.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+ww25.ci-pipeline.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+ww01.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401
+damn.vulnerable.site,-,-,False,-,False,Clean,No IP,SecurityTrails Error: 429,WHOISXML Error: 401

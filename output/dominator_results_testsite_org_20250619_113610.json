@@ -1,13 +1,14 @@
 [
   {
     "domain": "www.testsite.org",
-    "cname": "216.150.1.129",
+    "cname": "-",
+    "ip": "216.150.1.193",
     "resolvable": true,
     "provider": "-",
     "potential_takeover": false,
     "virustotal": "Clean",
     "shodan": "Ports: [80, 443]",
     "securitytrails": "SecurityTrails Error: 429",
-    "whoisxml": "Created: N/A, Expires: N/A, Registrar: Squarespace Domains II LLC"
+    "whoisxml": "WHOISXML Error: 401"
   }
 ]
