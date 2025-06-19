@@ -3,8 +3,8 @@ import os
 import json
 import csv
 import subprocess
-import socket
 import requests
+import dns.resolver
 from config import OUTPUT_FOLDER, VULNERABLE_FILE, VIRUSTOTAL_API_KEY, SHODAN_API_KEY, SECURITYTRAILS_API_KEY, WHOISXML_API_KEY, RED, GREEN
 from utils import load_fingerprints
 
@@ -23,16 +23,34 @@ def run_subfinder(domain):
 
 def resolve_cname(domain):
     try:
-        return socket.gethostbyname(domain)
-    except:
+        answers = dns.resolver.resolve(domain, 'CNAME')
+        for rdata in answers:
+            return str(rdata.target).rstrip('.')  # Heq pikën fundore
+    except (dns.resolver.NoAnswer, dns.resolver.NXDOMAIN, dns.resolver.NoNameservers):
+        return None
+    except Exception as e:
+        print(f"[!] DNS error resolving CNAME for {domain}: {e}")
+        return None
+
+def resolve_a_record(domain):
+    try:
+        answers = dns.resolver.resolve(domain, 'A')
+        for rdata in answers:
+            return rdata.address
+    except (dns.resolver.NoAnswer, dns.resolver.NXDOMAIN, dns.resolver.NoNameservers):
+        return None
+    except Exception as e:
+        print(f"[!] DNS error resolving A record for {domain}: {e}")
         return None
 
 def check_fingerprint(domain, cname):
+    if not cname:
+        return None
     for fp in fingerprints:
         provider = fp.get("provider", "")
         fps = fp.get("fingerprints", [])
         for pattern in fps:
-            if pattern.lower() in (cname or "").lower():
+            if pattern.lower() in cname.lower():
                 return provider
     return None
 
@@ -62,6 +80,8 @@ def virustotal_check(domain):
         return f"VT Exception: {e}"
 
 def shodan_check(ip):
+    if not ip:
+        return "No IP"
     try:
         url = f"https://api.shodan.io/shodan/host/{ip}?key={SHODAN_API_KEY}"
         resp = requests.get(url, timeout=10)
@@ -106,12 +126,12 @@ def whoisxml_lookup(domain):
     except Exception as e:
         return f"WHOISXML Exception: {e}"
 
-
 def scan_domain(domain):
     cname = resolve_cname(domain)
+    ip = resolve_a_record(domain)
+    
     provider = check_fingerprint(domain, cname) or http_check(domain)
     potential = provider is not None and cname is not None
-    ip = cname
 
     if potential:
         with open(VULNERABLE_FILE, "a") as vf:
@@ -120,14 +140,14 @@ def scan_domain(domain):
     return {
         "domain": domain,
         "cname": cname or "-",
-        "resolvable": bool(cname),
+        "ip": ip or "-",
+        "resolvable": bool(ip or cname),
         "provider": provider or "-",
         "potential_takeover": potential,
         "virustotal": virustotal_check(domain),
-        "shodan": shodan_check(ip) if ip else "No IP",
+        "shodan": shodan_check(ip),
         "securitytrails": securitytrails_check(domain),
         "whoisxml": whoisxml_lookup(domain)
-
     }
 
 def save_results(results, prefix):
